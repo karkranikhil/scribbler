@@ -7,6 +7,7 @@
     margin: 10px 10px 10px 20px;
     float:left;
     border-radius: 15px;
+   flex: 0 45%; 
 }
     
 .post-left {
@@ -44,8 +45,11 @@
     font-size: 30px;
 }
 .post-desc{
-    height: 100px;
+    max-height: 110px;
+    min-height: 110px;
+    height: 110px;
     margin-bottom: 0 !important;
+    overflow: hidden;
 }
 
 body {
@@ -60,5 +64,79 @@ body {
 .allPostsContainer {
     height: 100%;
     width: 100%;
-
+    justify-content: center;
+    flex-flow: row wrap;
+    display: flex;
 }
+.right{
+    float: right;
+}
+.trash-icon{
+    float: right;
+    margin: 3%;
+    font-size: 24px !important;
+    cursor: pointer;
+}
+/** modal styles **/
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    overflow: auto; 
+    color:black;
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.8); 
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    position: relative;
+    background-color: #ffffff;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 30%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+  }
+  
+  
+  /* Add Animation */
+  @-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+  }
+  
+  @keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+  }
+  .btn-modal {
+    border: none;
+    color: white;
+    padding: 14px 50px; 
+    cursor: pointer; 
+  }
+  .color-black{
+      color:black;
+  }
+  .red-btn {background-color: #f44336;} 
+  .red-btn:hover {background: #da190b;}
+  .green-btn{ background-color: #4cae50;}
+  .green-btn:hover {background: #4cae50;}
+  .modal-body {padding: 5%;    background: white !important;}
+
+  /** media query**/
+  @media screen and (max-width: 992px) {
+    .post-title {
+      font-size: 18px;
+    }
+  }
